@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>E-commerce Website</title>
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+
+        <header class="navbar" id="nvb">
+            
+            <span class="menu-button" id="nav-toggle">
+               <img src="./images/menu-image.png" alt="Menu" width="25">
+            </span>
+            <span class="brand">
+                <a href="#hme">ShopIt</a>
+            </span>
+            <ul class="nav-list hide-on-small-only" id="list-toggle">
+                <li>
+                    <a href="#hme" class="nav-links">Home</a>
+                </li>
+                <li>
+                    <a href="#abt" class="nav-links">About</a>
+                </li>
+                <li>
+                    <a href="#srvc" class="nav-links">Services</a>
+                </li>
+                <li>
+                    <a href="#cnct" class="nav-links">Contact</a>
+                </li>
+            </ul>
+
+        </header>
+
+        <section class="hero" id="hme">
+            <section class="row">
+                <article class="col s12 m5 l4 xl4 hero-text">
+                    <h2>Shopping has never been so fun.</h2>
+                    <p>Exciting deals until the month's end</p>
+                </article>
+                <article class="col s12 m7 l8 xl8 hero-image">
+                    <img src="./images/hero-image.svg" alt="Hero image" >
+                </article>
+            </section>
+        </section>
+
+        <section class="about" id="abt">
+            <section class="row">
+                <article class="col s12 m6 l6 xl6 about-image">
+                    <img src="./images/about-image.svg" alt="About image" >
+                </article>
+                <article class="col s12 m6 l6 xl6 about-text">
+                    <h1>About</h1>
+                    <p><b>ShopIt</b> is a shopping platform service that lets you seamlessly move through your buying journey. </p>
+                </article>
+            </section>
+        </section>
+
+
+        <section class="services row" id="srvc">
+            <article class="col s12 m12 l12 xl12 services-text">
+                <h1>Services</h1>
+            </article>
+            <article class="col s12 m12 l12 xl12 services-images" >
+                <section class="row cards">
+                    <article class="col s8 m10 l3 xl3 card1">
+                        <div class="row">
+                            <div class="col s12 m12 l12 xl12 card-image">
+                                <img src="./images/card1-image.svg" alt="card image">
+                            </div>
+                            <div class="col s12 m12 l12 xl12 card-text">
+                                <p>Select from a wide range of products</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col s8 m10 l3 xl3 card2">
+                        <div class="row">
+                            <div class="col s12 m12 l12 xl12 card-image">
+                                <img src="./images/card2-image.svg" alt="card image">
+                            </div>
+                            <div class="col s12 m12 l12 xl12 card-text">
+                                <p>Add the selected items into your cart</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col s8 m10 l3 xl3 card3">
+                        <div class="row">
+                            <div class="col s12 m12 l12 xl12 card-image">
+                                <img src="./images/card3-image.svg" alt="card image">
+                            </div>
+                            <div class="col s12 m12 l12 xl12 card-text">
+                                <p>Pay with your card and the purchase is done</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </article>
+        </section>
+
+        <section class="contact" id="cnct">
+            <section class="row contactrow">
+                <article class="col s12 m12 l4 xl4 contact-text">
+                    <h1>Contact Us</h1>
+                </article>
+                <article class="col s12 m12 l8 xl8 contact-form">
+                    <div class="form-block">
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <input id="full_name" type="text" class="validate">
+                                <label for="full_name">Full Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <input id="number" type="text" class="validate">
+                                <label for="number">Mobile No.</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Message</label>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        
+
+
+       
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="./js/index.js"></script>
+    </body>
+</html>

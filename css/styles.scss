@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    margin-top: 0 !important;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+
+html,body{
+    scroll-behavior: smooth;
+}
+
+
+// VARIABLES START
+
+$font1 : 'Sen', sans-serif;
+
+$font-size-phone1 : 35px;
+$font-size-phone2 : 1em;
+
+$color1: rgb(82, 82, 82);
+$color2: #4BACDA;
+
+
+// VARIABLES END
+
+
+// MIXINS START
+
+@mixin flexBox($flex-direction,$justify-content,$align-items){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin border($width,$type,$colr){
+    border: $width $type $colr;
+}
+
+@mixin border-bottom($width,$type,$colr){
+    border-bottom: $width $type $colr;
+}
+
+@mixin for-phone{
+    @media (max-width: 600px) { @content; }
+}
+
+@mixin for-tablet{
+    @media (min-width: 601px) and (max-width: 991px){ @content; }
+}
+
+@mixin for-laptop{
+    @media (min-width: 992px) { @content; }
+}
+
+// MIXINS END
+
+
+body{
+    font-family: $font1;
+}
+
+
+// NAVBAR START
+
+.navbar{
+    margin: 0 auto;
+    height: 10vh;
+    width: 100vw;
+    padding: 2%;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    top: -70px;
+    transition: top 1.5s;
+
+    @include flexBox(row, space-between, center);
+
+    @include for-phone{
+        width: 100%;
+        position: static;
+        // background-color: rgb(41, 41, 41);
+    }
+
+    .menu-button{
+        display: none;
+
+        @include for-phone{
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    }
+
+    .brand{
+        font-size:45px;
+        color: $color2;
+        font-weight: 700;
+        text-shadow: 2px 3px rgba(1,1,1,0.2);
+
+        @include for-phone{
+            font-size: 35px;
+        }
+    }
+
+    .nav-list{
+        text-decoration: none;
+        @include flexBox(row, flex-end, center);
+
+        li{
+            margin: 0px 15px 0px 15px;
+
+            @include for-phone{
+                margin: 3px;
+            }
+
+            .nav-links{
+                color: black;
+                outline: none;
+                
+                &:hover{
+                    color: $color1;
+                    @include border-bottom(2px,solid,$color2);
+                }
+            }
+
+        }
+
+    }
+}
+
+// NAVBAR END
+
+
+// HERO START
+
+.hero{
+    height: 100vh;
+    // background-color: pink;
+    @include flexBox(row,center,center);
+
+    @include for-phone{
+        @include flexBox(column, center, center);
+    }
+    
+    .row{
+        height: 90vh;
+        width: 90vw;
+        // background-color: skyblue;
+
+        .hero-text{
+            height: 100%;
+            @include flexBox(column,center,flex-start);
+            // background-color: purple;
+
+            @include for-phone{
+                height: 30vh;
+                @include flexBox(column,center,center);
+                text-align: center;
+            }
+
+            h2{
+                color: $color2;
+
+                @include for-phone{
+                    font-size: $font-size-phone1;
+                }
+            }
+            p{
+                font-size: 1.2em;
+                color: $color1;
+
+                @include for-phone{
+                    font-size: $font-size-phone2;
+                }
+            }
+        }
+
+        .hero-image{
+            height: 100%;
+            @include flexBox(column,center,center);
+            // background-color: green;
+
+            img{
+                width: 100%;
+                height: 80%;
+            }
+
+            @include for-phone{
+                height: 60vh;
+            }
+        }
+    }
+}
+
+// HERO END
+
+
+// ABOUT START
+
+.about{
+    height: 100vh;
+    // background-color: pink;
+    @include flexBox(row, center, center);
+
+    @include for-phone{
+        @include flexBox(column, center, center);
+    }
+
+    .row{
+        height: 90vh;
+        width: 90vw;
+        // background-color: grey;
+
+        .about-image{
+            height: 100%;
+            // background-color: blue;
+            @include flexBox(column,center,center);
+
+            img{
+                width: 70%;
+                height: 70%;
+            }
+
+            @include for-phone{
+                height: 60vh;
+            }
+        }
+
+        .about-text{
+            height: 100%;
+            // background-color: green;
+            @include flexBox(column,center,center);
+
+            h1{
+                margin: 50px 0px;
+                color: $color2;
+
+                @include for-phone{
+                    margin: 10px;
+                    font-size: $font-size-phone1;
+                }
+            }
+
+            p{
+                font-size: 2em;
+                color: $color1;
+
+                @include for-phone{
+                    font-size: $font-size-phone2;
+                }
+            }
+
+            
+            @include for-phone{
+                height: 30vh;
+                @include flexBox(column,center,center);
+                text-align: center;
+            }
+        }
+    }
+}
+
+// ABOUT END
+
+
+// SERVICES START
+
+%card{
+    height: 50vh;
+    // background-color: skyblue;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+%card-hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+%card-image{
+    // background-color: green;
+    height: 35vh;
+    margin: 0 auto;
+}
+
+%img{
+    margin: 0 auto;
+    height: 90%;
+    width: 100%;
+    margin-top: 10px !important;
+}
+
+%card-text{
+    background-color: skyblue;
+    height: 15vh;
+    border-radius: 5px;
+    @include flexBox(column, center, center);
+}
+
+%p{
+    font-size: 20px;
+    text-align: center;
+    color: $color1;
+}
+
+
+.services{
+    height: 100vh;
+    // background-color: pink;
+    @include flexBox(column, center, center);
+
+    @include for-phone{
+        height: auto;
+        @include flexBox(column, center, center);
+    }
+
+    .services-text{
+
+        h1{
+            text-align: center;
+            color: $color2;
+
+            @include for-phone{
+                font-size: $font-size-phone1;
+            }
+        }
+    }
+
+    .services-images{
+
+        @include flexBox(row, center, center);
+
+        .cards{
+            height: 90vh;
+            width: 90vw;
+            // background-color: grey;
+            @include flexBox(row, center, center);
+
+            @include for-phone{
+                height: auto;
+                @include flexBox(column, center, center);
+            }
+
+            .card1{
+
+                @extend %card;
+
+                .card-image{
+                @extend %card-image;
+
+                img{
+                @extend %img;
+                }
+
+                }
+                .card-text{
+                    @extend %card-text;
+
+                    p{
+                        @extend %p;
+
+                        @include for-phone{
+                            font-size: $font-size-phone2;
+                        }
+                    }
+                }
+
+                @include for-phone{
+                    margin: 50px 0px;
+                }
+
+                &:hover{
+                    @extend %card-hover;
+                }
+            }
+
+            .card2{
+                @extend %card;
+
+                .card-image{
+                @extend %card-image;
+
+                img{
+                    @extend %img;
+                }
+
+                }
+                .card-text{
+                    @extend %card-text;
+
+                    p{
+                        @extend %p;
+
+                        @include for-phone{
+                            font-size: $font-size-phone2;
+                        }
+                    }
+                }
+
+                @include for-phone{
+                    margin: 50px 0px;
+                }
+
+                &:hover{
+                    @extend %card-hover;
+                }
+            }
+
+            .card3{
+                @extend %card;
+
+                .card-image{
+                @extend %card-image;
+
+                img{
+                    @extend %img;
+                }
+
+                }
+                .card-text{
+                @extend %card-text;
+
+                p{
+                    @extend %p;
+
+                    @include for-phone{
+                        font-size: $font-size-phone2;
+                    }
+                }
+                }
+
+                @include for-phone{
+                    margin: 50px 0px;
+                }
+
+                &:hover{
+                    @extend %card-hover;
+                }
+            }
+        }
+    }
+}
+
+
+// SERVICES END
+
+
+// CONTACT START
+
+
+.contact{
+    height: 70vh;
+    // background-color: pink;
+    @include flexBox(row, center, center);
+
+    @include for-phone{
+        height: 60vh;
+        @include flexBox(column, center, center);
+    }
+
+    .contactrow{
+        height: 60vh;
+        width: 70vw;
+        // background-color: grey;
+        // border: 2px solid $color2;
+
+        @include for-phone{
+            height: 70vh;
+        }
+
+        .contact-text{
+            height: 100%;
+            background-color: skyblue;
+            @include flexBox(column, center, center);
+           
+           h1{
+                color: $color1;
+                
+                @include for-phone{
+                    font-size: $font-size-phone1;
+                }
+            }
+
+            @include for-phone{
+                height: 10vh;
+            }
+        }
+
+        .contact-form{
+            height: 100%;
+            // height: auto;
+            // background-color: cyan;
+            text-align:center !important;
+            @include flexBox(column, center, center);
+
+            .form-block{
+                // background-color: $color2;
+                height: auto;
+                width: 60%;
+                padding: 3%;
+
+                @include for-phone{
+                    padding: 5%;
+                    width: 90%;
+                }
+
+                .row{
+                    label{
+                        color: $color2;
+                    }
+                }
+            }
+
+            @include for-phone{
+                height: 50vh;
+            }
+        }
+    }
+}
+
+// CONTACT END
