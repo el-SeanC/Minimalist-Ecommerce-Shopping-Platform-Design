@@ -11,3 +11,4 @@ The project was created for the purpose of learning and improving my skills in l
 ![alt text](https://github.com/el-SeanC/Minimalist-Ecommerce-Shopping-Platform-Design/blob/main/screenshots/screenshot-3.jpg)
 
 ![alt text](https://github.com/el-SeanC/Minimalist-Ecommerce-Shopping-Platform-Design/blob/main/screenshots/screenshot-4.jpg)
+
